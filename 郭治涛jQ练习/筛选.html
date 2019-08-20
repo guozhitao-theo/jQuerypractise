@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box1">
+			<p><a>这是box1的p标签内的a标签</a></p>
+		</div>
+		<div class="box2">
+			<div class="child-box2">
+				<div class="grandsun-box2">
+					<div class="content">
+						这是box2里的child-box2里的grandsun-box里的content
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box3">
+			<div style="width: 20px;height: 20px;background: red;">
+				
+			</div>
+			<p class="pr">折是个p</p>
+			<input type="text" />
+			<input type="password"/>
+			<input type="datetime"  />
+			<label><input type="radio" />这是个单选框</label>
+		</div>
+		<div class="box4">
+			里面啥都没丢
+		</div>
+		<p>Hello</p><p id="selected">Hello Again</p>
+	</body>
+	<script src="js/jquery-2.1.0.js"></script>
+	<script>
+		//获取匹配的第二个元素
+//		console.log($('input').eq(1))
+		//获取匹配的倒数第一个元素
+//		console.log($('input').eq(-1))
+		//获取第一个元素
+//		console.log($('div').first())
+		//获取最后一个元素
+//		console.log($('input').last())
+		//获取含有类名box2的元素,返还值为true、false
+//		console.log($('div').hasClass('box2'))
+		//匹配有content类名的元素
+//		console.log($('div').filter('.content'))
+		//匹配是否为box3的div节点。返还值为boolean
+//		console.log($('[type=text]').parent().is('div'))
+		//map遍历
+//		$('.box3').map(function(){
+//			console.log(this)
+//		})
+		//
+//		$('.box3').has('div').css('background','red')
+		//not 选择不含匹配选择器的标签
+//		$("p").not( $("#selected")[0] ).css('background-color', 'red');
+		
+//		$("p").slice(0).css('background-color', 'red');
+//		console.log($("div").children())
+//		console.log($("[type=text]").closest('.box3'))
+//		$('.box2').find('div').css('color','red')
+//		console.log($('[type=text]').next())
+//		console.log($('[type=text]').nextAll())
+//		console.log($('[type=text]').nextUntil('[type=radio]'))
+//		console.log($('[type=text]').parent())
+//		console.log($('[type=text]').parents())
+//		console.log($('[type=text]').parentsUntil('body'))
+//		console.log($('[type=text]').prev())
+//		console.log($('[type=text]').prevAll())
+//		console.log($('[type=text]').prevUntil('.box3'))
+//		console.log($('[type=text]').siblings())
+	</script>
+</html>

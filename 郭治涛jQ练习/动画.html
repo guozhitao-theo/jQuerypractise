@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动画练习</title>
+	</head>
+	<style>
+		.box{
+			width: 300px;
+			height: 300px;
+			position: relative;
+			top: 50px;
+			left: 50px;
+			background: #FF2D52;
+		}
+	</style>
+	<body>
+		<button>动画1</button>
+		<button>动画2</button>
+		<button>动画3</button>
+		<button>动画4</button>
+		<button>停止</button>
+		<div class="box">
+			
+		</div>
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script>
+	//获取按钮
+	var btn =$('button')
+	//获取盒子
+	var box =$('.box')
+	
+	//动画一改变盒子的宽高
+	btn.eq(0).click(function(){
+		box.animate({
+			width: '500px',
+			height:　'500px'
+		},1000)
+	})
+	
+	//动画二 将动画一从中心放大
+	btn.eq(1).click(function(){
+		box.animate({
+			width: '500px',
+			height:　'500px',
+			left: '-50px',
+			top: '-50px'
+		},100)
+	})
+	
+	//将div的left||top等每次加10
+	btn.eq(2).click(function(){
+		box.animate({
+			left: '+=10px',
+			top: '+=10px'
+		},3000)
+	})
+	
+	//将div的宽先调整为600px，高再调整为600px
+	btn.eq(3).click(function(){
+		box.animate({
+			width: '600px'
+		},1000,function(){
+			box.animate({
+			height: '600px'
+		})
+		})
+	})
+	
+	//停止操作
+	btn.last().click(function(){
+		box.stop()	
+	})
+	
+
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>盒子跟着鼠标动</title>
+	</head>
+	<style>
+		.box{
+			width: 600px;
+			height: 600px;
+			background: #FF0000;
+		}
+		.child{
+			width: 100px;
+			height: 100px;
+			background: #8A2BE2;
+			position: relative;
+		}
+		
+	</style>
+	<body>
+		<div class="box">
+			<div class="child">
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script>
+	$('.box').mousemove(function(event){
+		//获取鼠标的位置
+		var pageX = event.pageX
+		var pageY = event.pageY
+		//获取盒子的位置，top,left,以及宽高
+		var offsetX = $(this).offset().left
+		var offsetY = $(this).offset().top
+		var boxheight = $(this).outerHeight()
+		var boxwidth = $(this).outerWidth()
+		//获取需要移动的盒子的宽和高
+		var height = $('.child').outerHeight()
+		var width = $('.child').outerWidth()
+		//定义位置
+		var positionX = pageX-offsetX-width/2
+		var positionY = pageY-offsetY-height/2
+		//三木运算判断超出边框
+		positionX = positionX > 0 ? positionX : 0
+		positionY = positionY > 0 ? positionY : 0
+		
+		positionX = positionX < (boxwidth-width) ? positionX :boxwidth-width
+		positionY = positionY < (boxheight-height) ? positionY : boxheight-height
+		
+		
+		//给需要移动的盒子设置位置
+		$('.child').css({
+			top: positionY,
+			left: positionX 
+		})
+	})
+	
+	
+</script>

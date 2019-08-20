@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div >1</div>
+		<div >2</div>
+		<div >3</div>
+		<div >4</div>
+		<div >5</div>
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script>
+	//each循环
+//	$.each($('div'),function(){
+//	})
+	//map,循环
+	//extends 合并对象
+	var obj1 = {
+		name:'guozhitao-theo',
+		age:23,
+		sex: 'nan',
+		number: 123526565,
+		min: function(a,b){
+			return a<b
+		}
+	}
+	var obj2 = {
+		name:'guozhitao-theo',
+		age: 50,
+		sex: 'nan',
+		tel: '1823929404	'
+	}
+//	$.extend(obj1,obj2)
+//	console.log(obj1,obj1)
+//
+	var arr1 = [1,2,3,4]
+	var arr2 = [2,3,4,5,6]
+//	$.extend(arr1,arr2)
+//	console.log(arr1,arr2)
+
+	//向jq中添加工具
+//	$.extend(obj1)
+
+//链接两个数组merge ,unique要在merge后使用
+	console.log($('div:lt(3)'))
+	console.log($('div:gt(1)'))
+  var arr3 =$.merge($('div:lt(3)'),$('div:gt(1)'))
+  $.unique(arr3)
+	console.log(arr3)
+	//map遍历数组
+	$.map(arr1,function(index,item){
+		console.log(index,item)
+	})
+	//map遍历对象 (前面是属性值后面是属性名)
+	$.map(obj1,function(value,attr){
+		console.log(value,attr)
+	})
+	//map循环将对象的属性或者属性值转化为数组
+	var result =$.map(obj1,function(value,attr){
+		return value
+	})
+	console.log(result)
+	//判断对象是否为空
+	console.log($.isEmptyObject(obj1))
+</script>

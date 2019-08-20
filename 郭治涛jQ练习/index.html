@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style>
+		/*类名box1的样式*/
+		.box1{
+			border: 1px solid #ff2d52;
+			text-align: center;
+		}
+		/*idbox1的样式*/
+		#box1{
+			font-size: 18px;
+			color: palegreen;
+			text-align: center;
+		}
+		/*类名为box2的样式*/
+		.box2{
+			color: red;
+			border: 2px solid blueviolet;
+			text-align: center;
+		}
+		/*类名为box32*/
+		.box32{
+			font-size: 42px;
+			font-weight: bold;
+			color: orangered;
+			text-align: center;
+		}
+	</style>
+	<body>
+		<div class="box1">
+			<span>gzt_shaui</span>
+		</div>
+		
+		<div id= "box1">
+			<p>gzt_shuai</p>
+		</div>
+		
+		<div class="box2">
+			<div class="box2-child">
+				郭治涛帅不帅？
+			</div>
+		</div>
+		
+		<div class="box32">
+			帅
+		</div>
+		
+		<div class="box1">
+			<span>有多帅？</span>
+		</div>
+	</body>
+	<script src="js/jquery-2.1.0.js"></script>
+	<script>
+		
+		//打印所有含有class属性的div   $("Element[prop]")
+		console.log("所有含有class属性的div", $("div[class]"))
+		console.log("所有有id的div",$("div[id]"))
+		
+		//打印所有属性值等于某某的元素$("Element[prop = str]") str为字符串''
+		console.log("所有含有class属性为box1", $("div[class = 'box1'"))
+	</script>
+</html>

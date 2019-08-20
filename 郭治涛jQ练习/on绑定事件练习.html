@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div >
+			<input type="text"  />
+			<button class="submit">提交</button>
+		</div>
+		<ul>
+			<li> 讲个笑话，哈哈哈<button class="delet">删除</button></li>
+		</ul>
+		
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script>
+	//提交按钮添加点击事件，将input的value值写入后面的ul内
+	$('.submit').click(function(){
+		var value = $('[type=text]').val()
+		$('ul').append('<li> '+value+'<button class="delet">删除</button></li>')
+	})
+	//事件on的用法on(事件名[，选择器][data][，执行函数体])
+	$('ul').on('click','.delet',function(){
+		$(this).closest('li').remove()
+	})
+	
+</script>

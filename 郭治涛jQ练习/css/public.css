@@ -1,0 +1,772 @@
+/*全局属性*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*line-height: 1;*/
+}
+li{
+	list-style: none;
+}
+input:focus{
+	outline: none;
+	
+}
+
+/*去除a标签的文字样式*/
+a{
+	background: none;
+	text-decoration: none;
+}
+/*所有的a标签加hover*/
+a:hover{
+	cursor: pointer;
+}
+body{
+	font-size: 12px;
+	min-width: 1200px;
+	color: #333;
+}
+/*设置内联盒子*/
+.inline-block{
+	display: inline-block;
+}
+.lin-height-50{
+	line-height: 50px;
+}
+.border-bottom{
+	border-bottom: 1px solid #E2E2E2;
+}
+
+/*相对定位*/
+.position-relative{
+	position: relative;
+}
+
+.font-normal{
+	font-weight: normal;
+}
+/*删除线*/
+.text-through{
+	text-decoration: line-through;
+}
+/*行高*/
+.lin-height-25{
+	line-height: 25px;
+}
+/*超出隐藏*/
+.text-hidden{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/*超出隐藏3行*/
+.text-hidden-3{
+	/*text-overflow: -o-ellipsis-lastline;*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+/*超出隐藏两行*/
+.text-hidden-2{
+	/*text-overflow: -o-ellipsis-lastline;*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/*超出隐藏5行*/
+.text-hidden-5{
+	/*text-overflow: -o-ellipsis-lastline;*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+}
+/*字体 大小封装 
+ 12 14 16 18 20 22 24 26 28 30 36
+ * */
+.font-0{
+	font-size: 0;
+}
+.font-12{
+	font-size: 12px;
+}
+.font-14{
+	font-size: 14px;
+}
+.font-16{
+	font-size: 16px;
+}
+.font-18{
+	font-size: 18px;
+}
+.font-20{
+	font-size: 20px;
+}
+.font-22{
+	font-size: 22px;
+}
+.font-24{
+	font-size: 24px;
+}
+.font-26{
+	font-size: 26px;
+}
+.font-28{
+	font-size: 28px;
+}
+.font-30{
+	font-size: 30px;
+}
+.font-36{
+	font-size: 36px;
+}
+/*行高*/
+.line-12{
+	line-height: 12px;
+}
+.line-14{
+	line-height: 14px;
+}
+.line-16{
+	line-height: 16px;
+}
+.line-18{
+	line-height: 18px;
+}
+.line-20{
+	line-height: 20px;
+}
+.line-22{
+	line-height: 24px;
+}
+.line-26{
+	line-height: 26px;
+}
+.line-28{
+	line-height: 28px;
+}
+.line-30{
+	line-height: 30px;
+}
+.line-38{
+	line-height: 38px;
+}
+/*字体颜色封装*/
+.font-orange{
+	color: #ff6600;
+}
+.font-gry{
+	color: #a3a3a3;
+}
+.font-white{
+	color: #fff;
+}
+.font-red{
+	color: #ff2d52
+}
+.font-yellow{
+	color: #ff8a54;
+}
+.font-pink{
+	color: #ff93a1;
+}
+.font-dark{
+	color: #959595;
+}
+.font-darklight{
+	color: #7a7a7a;
+}
+/**/
+.font-black{
+	color: #333333;
+}
+
+/*字体加粗*/
+.font-weight{
+	font-weight: bold;
+}
+
+/*字体加删除线*/
+.font-del{
+	text-decoration: line-through;
+}
+/*字体对齐*/
+/*右对齐*/
+.text-r{
+	text-align: right;
+}
+/*左右居中*/
+.text-center{
+	text-align: center;
+}
+/*左对齐*/
+.text-l{
+	text-align: left;
+}
+
+/*设置背景颜色*/
+.bg-color-white{
+	background-color: #ffffff;
+}
+.bg-color-red{
+	background-color: #ff2d52;
+}
+.bg-color-deepred{
+	background-color: #ec193e;
+}
+.bg-color-deepgray{
+	background-color: #666666;
+}
+.bg-color-dark{
+	 background-color: #535353;
+}
+.bg-color-deepdark{
+	background-color: #343434;
+}
+
+/*浮动*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+
+/*清除浮动*/
+.clearfix:after{
+	content: '';
+	clear: both;
+	display: block;
+}
+
+/*设置边距*/
+.margin-45-left{
+	margin-left: 45px;
+}
+
+.margin-17-top{
+	margin-top: 17px;
+}
+/*外边距为5*/
+.margin-5{
+	margin: 5px;
+}
+/*设置上下边距*/
+.margin-5-tb{
+	margin: 5px 0;
+}
+/*设置左右边距*/
+.margin-5-lr{
+	margin: 0 5px;
+}
+/*设置上边距*/
+.margin-5-top{
+	margin-top: 5px;
+}
+/*设置右边距*/
+.margin-5-right{
+	margin-right: 5px;
+}
+/*设置下边距*/
+.margin-5-bottom{
+	margin-bottom: 5px;
+}
+/*设置左边距*/
+.margin-5-left{
+	margin-left: 5px;
+}
+
+/*外边距为10*/
+.margin-10{
+	margin: 10px;
+}
+/*设置上下边距*/
+.margin-10-tb{
+	margin: 10px 0;
+}
+/*设置左右边距*/
+.margin-10-lr{
+	margin: 0 10px;
+}
+/*设置上边距*/
+.margin-10-top{
+	margin-top: 10px;
+}
+/*设置右边距*/
+.margin-10-right{
+	margin-right: 10px;
+}
+/*设置下边距*/
+.margin-10-bottom{
+	margin-bottom: 10px;
+}
+/*设置左边距*/
+.margin-10-left{
+	margin-left: 10px;
+}
+
+/*外边距为15*/
+.margin-15{
+	margin: 15px;
+}
+/*设置上下边距*/
+.margin-15-tb{
+	margin: 15px 0;
+}
+/*设置左右边距*/
+.margin-15-lr{
+	margin: 0 15px;
+}
+/*设置上边距*/
+.margin-15-top{
+	margin-top: 15px;
+}
+/*设置右边距*/
+.margin-15-right{
+	margin-right: 15px;
+}
+/*设置下边距*/
+.margin-15-bottom{
+	margin-bottom: 15px;
+}
+/*设置左边距*/
+.margin-15-left{
+	margin-left: 15px;
+}
+
+/*外边距为20*/
+.margin-20{
+	margin: 20px;
+}
+/*设置上下边距*/
+.margin-20-tb{
+	margin: 20px 0;
+}
+/*设置左右边距*/
+.margin-20-lr{
+	margin: 0 20px;
+}
+/*设置上边距*/
+.margin-20-top{
+	margin-top: 20px;
+}
+/*设置右边距*/
+.margin-20-right{
+	margin-right: 20px;
+}
+/*设置下边距*/
+.margin-20-bottom{
+	margin-bottom: 20px;
+}
+/*设置左边距*/
+.margin-20-left{
+	margin-left: 20px;
+}
+
+/*外边距为25*/
+.margin-25{
+	margin: 25px;
+}
+/*设置上下边距*/
+.margin-25-tb{
+	margin: 25px 0;
+}
+/*设置左右边距*/
+.margin-25-lr{
+	margin: 0 25px;
+}
+/*设置上边距*/
+.margin-25-top{
+	margin-top: 25px;
+}
+/*设置右边距*/
+.margin-25-right{
+	margin-right: 25px;
+}
+/*设置下边距*/
+.margin-25-bottom{
+	margin-bottom: 25px;
+}
+/*设置左边距*/
+.margin-25-left{
+	margin-left: 25px;
+}
+
+/*外边距为30*/
+.margin-30{
+	margin: 30px;
+}
+/*设置上下边距*/
+.margin-30-tb{
+	margin: 30px 0;
+}
+/*设置左右边距*/
+.margin-30-lr{
+	margin: 0 30px;
+}
+/*设置上边距*/
+.margin-30-top{
+	margin-top: 30px;
+}
+/*设置右边距*/
+.margin-30-right{
+	margin-right: 30px;
+}
+/*设置下边距*/
+.margin-30-bottom{
+	margin-bottom: 30px;
+}
+/*设置左边距*/
+.margin-30-left{
+	margin-left: 30px;
+}
+
+
+/*外边距为35*/
+.margin-35{
+	margin: 35px;
+}
+/*设置上下边距*/
+.margin-35-tb{
+	margin: 35px 0;
+}
+/*设置左右边距*/
+.margin-35-lr{
+	margin: 0 35px;
+}
+/*设置上边距*/
+.margin-35-top{
+	margin-top: 35px;
+}
+/*设置右边距*/
+.margin-35-right{
+	margin-right: 35px;
+}
+/*设置下边距*/
+.margin-35-bottom{
+	margin-bottom: 35px;
+}
+/*设置左边距*/
+.margin-35-left{
+	margin-left: 35px;
+}
+
+/*外边距为40*/
+.margin-40{
+	margin: 40px;
+}
+/*设置上下边距*/
+.margin-40-tb{
+	margin: 40px 0;
+}
+/*设置左右边距*/
+.margin-40-lr{
+	margin: 0 40px;
+}
+/*设置上边距*/
+.margin-40-top{
+	margin-top: 40px;
+}
+/*设置右边距*/
+.margin-40-right{
+	margin-right: 40px;
+}
+/*设置下边距*/
+.margin-40-bottom{
+	margin-bottom: 40px;
+}
+/*设置左边距*/
+.margin-40-left{
+	margin-left: 40px;
+}
+
+
+/*外边距为50*/
+.margin-50{
+	margin: 50px;
+}
+/*设置上下边距*/
+.margin-50-tb{
+	margin: 50px 0;
+}
+/*设置左右边距*/
+.margin-50-lr{
+	margin: 0 50px;
+}
+/*设置上边距*/
+.margin-50-top{
+	margin-top: 50px;
+}
+/*设置右边距*/
+.margin-50-right{
+	margin-right: 50px;
+}
+/*设置下边距*/
+.margin-50-bottom{
+	margin-bottom: 50px;
+}
+/*设置左边距*/
+.margin-50-left{
+	margin-left: 40px;
+}
+/*<---------------分隔符--------------------------->*/
+/*设置内边距*/
+/*内边距为5*/
+.padding-5{
+	padding: 5px;
+}
+/*设置上下边距*/
+.padding-5-tb{
+	padding: 5px 0;
+}
+/*设置左右边距*/
+.padding-5-lr{
+	padding: 0 5px;
+}
+/*设置上边距*/
+.padding-5-top{
+	padding-top: 5px;
+}
+/*设置右边距*/
+.padding-5-right{
+	padding-right: 5px;
+}
+/*设置下边距*/
+.padding-5-bottom{
+	padding-bottom: 5px;
+}
+/*设置左边距*/
+.padding-5-left{
+	padding-left: 5px;
+}
+
+/*内边距为10*/
+.padding-10{
+	padding: 10px;
+}
+/*设置上下边距*/
+.padding-10-tb{
+	padding: 10px 0;
+}
+/*设置左右边距*/
+.padding-10-lr{
+	padding: 0 10px;
+}
+/*设置上边距*/
+.padding-10-top{
+	padding-top: 10px;
+}
+/*设置右边距*/
+.padding-10-right{
+	padding-right: 10px;
+}
+/*设置下边距*/
+.padding-10-bottom{
+	padding-bottom: 10px;
+}
+/*设置左边距*/
+.padding-10-left{
+	padding-left: 10px;
+}
+
+/*内边距为15*/
+.padding-15{
+	padding: 15px;
+}
+/*设置上下边距*/
+.padding-15-tb{
+	padding: 15px 0;
+}
+/*设置左右边距*/
+.padding-15-lr{
+	padding: 0 15px;
+}
+/*设置上边距*/
+.padding-15-top{
+	padding-top: 15px;
+}
+/*设置右边距*/
+.padding-15-right{
+	padding-right: 15px;
+}
+/*设置下边距*/
+.padding-15-bottom{
+	padding-bottom: 15px;
+}
+/*设置左边距*/
+.padding-15-left{
+	padding-left: 15px;
+}
+
+/*内边距为20*/
+.padding-20{
+	padding: 20px;
+}
+/*设置上下边距*/
+.padding-20-tb{
+	padding: 20px 0;
+}
+/*设置左右边距*/
+.padding-20-lr{
+	padding: 0 20px;
+}
+/*设置上边距*/
+.padding-20-top{
+	padding-top: 20px;
+}
+/*设置右边距*/
+.padding-20-right{
+	padding-right: 20px;
+}
+/*设置下边距*/
+.padding-20-bottom{
+	padding-bottom: 20px;
+}
+/*设置左边距*/
+.padding-20-left{
+	padding-left: 20px;
+}
+
+/*内边距为25*/
+.padding-25{
+	padding: 25px;
+}
+/*设置上下边距*/
+.padding-25-tb{
+	padding: 25px 0;
+}
+/*设置左右边距*/
+.padding-25-lr{
+	padding: 0 25px;
+}
+/*设置上边距*/
+.padding-25-top{
+	padding-top: 25px;
+}
+/*设置右边距*/
+.padding-25-right{
+	padding-right: 25px;
+}
+/*设置下边距*/
+.padding-25-bottom{
+	padding-bottom: 25px;
+}
+/*设置左边距*/
+.padding-25-left{
+	padding-left: 25px;
+}
+
+/*外边距为30*/
+.padding-30{
+	padding: 30px;
+}
+/*设置上下边距*/
+.padding-30-tb{
+	padding: 30px 0;
+}
+/*设置左右边距*/
+.padding-30-lr{
+	padding: 0 30px;
+}
+/*设置上边距*/
+.padding-30-top{
+	padding-top: 30px;
+}
+/*设置右边距*/
+.padding-30-right{
+	padding-right: 30px;
+}
+/*设置下边距*/
+.padding-30-bottom{
+	padding-bottom: 30px;
+}
+/*设置左边距*/
+.padding-30-left{
+	padding-left: 30px;
+}
+.padding-45-right{
+	padding-right: 45px;
+}
+.padding-40-left{
+	padding-left: 40px;
+}
+
+/*设置图片宽高*/
+/*设置轮播图*/
+.banner{
+	width: 780px;
+	height: 307px;
+}
+/*设置推荐商品等图片宽高*/
+.goods-biger-img{
+	width: 200px;
+	height: 200px;
+}
+/*设置1f 2f 3f等*/
+.goods-nomal-img{
+	width: 150px;
+	height: 150px;
+}
+/*设置底部图标*/
+.lable-bottom-img{
+	width: 80px;
+	height: 30px;
+}
+
+
+
+.content{
+	width: 1200px;
+	margin: 0 auto;
+}
+/*设置按钮*/
+.button{
+	display: inline-block;
+	padding: 3px 10px;
+	background: #fff;
+	color: #000000;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.button-gray{
+	display: inline-block;
+	padding: 3px 10px;
+	background: #a8b5bf;
+	color: #fff;
+	border: 1px solid #a8b5bf;
+	border-radius: 4px;
+}
+.button-red{
+	display: inline-block;
+	padding: 3px 10px;
+	background: #FF2D52;
+	color: #fff;
+	border: 1px solid #FF2D52;
+	border-radius: 4px;
+}
+/*按钮鼠标移动上去hover*/
+.button:hover{
+	display: inline-block;
+	padding: 3px 10px;
+	background: #FF2D52;
+	color: #fff;
+	border: 1px solid #FF2D52;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.button-red:hover{
+	display: inline-block;
+	padding: 3px 10px;
+	background: #EC193E;
+	color: #fff;
+	border: 1px solid #EC193E;
+	border-radius: 4px;
+	cursor: pointer;
+}

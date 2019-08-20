@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		body{
+			font-size: 0;
+		}
+		a{font-size: 18px;
+			display: block;
+			width: 54px;
+			height: 40px;
+			padding: 0 10px;
+			background: #ff2d52;
+			color: #fff;
+			border: 1px solid #E2E2E2;
+		}
+		ul{
+			padding-left: 0;
+			display: none;
+		}
+		li{
+			width: 54px;
+			border:1px solid yellow ;
+			font-size: 18px;
+			list-style: none;
+			/*display: inline-block;*/
+			height: 40px;
+			padding: 0 10px;
+			background: #000;
+			color: #fff;
+			line-height: 42px;
+		}
+		.box.on .btn{
+			background: purple;
+			color: #fff;
+		}
+	</style>
+	<body>
+		<div class="lists-all">
+			<!--按钮-->
+			<div class="box">
+				<a class="btn">按钮一</a>
+				<ul class="lists">
+					<li>内容1</li>
+					<li>内容二</li>
+					<li>内容三</li>
+					<li>内容四</li>
+					<li>内容五</li>
+				</ul>
+			</div>
+			
+			
+			<div class="box">
+				<a class="btn">按钮二</a>
+				<ul class="lists">
+					<li>内容2</li>
+					<li>内容二</li>
+					<li>内容三</li>
+					<li>内容四</li>
+					<li>内容五</li>
+				</ul>
+			</div>
+			
+			<div class="box">
+				<a class="btn">按钮三</a>
+				<ul class="lists">
+					<li>内容3</li>
+					<li>内容二</li>
+					<li>内容三</li>
+					<li>内容四</li>
+					<li>内容五</li>
+				</ul>
+			</div>
+			
+			<div class="box">
+				<a class="btn">按钮四</a>
+				<ul class="lists">
+					<li>内容4</li>
+					<li>内容二</li>
+					<li>内容三</li>
+					<li>内容四</li>
+					<li>内容五</li>
+				</ul>
+			</div>
+			
+			
+		</div>
+		
+		
+	</body>
+	<script src="js/jquery-2.1.0.js"></script>
+	<script>
+		//第一步，获取所有的a标签
+		$('a').click(function(){
+		//定义parent为当前点击元素的父级
+		var parent = $(this).parent()
+		//parent是否含有on类名
+		if(parent.hasClass('on')){
+			//如果有on这个类名就移除该类名
+			parent.removeClass('on')
+		}else{
+			//若没有这个类名就添加on
+			parent.addClass('on')
+			//移除parent兄弟元素的on
+			parent.siblings().removeClass('on')
+			//通过父级找到需要滑动的盒子(当前为lists),并将其收起
+			parent.siblings().find('.lists').fadeOut()
+		}
+		//最后当前按钮的下一个标签用slideToggle方法
+		$(this).next().fadeToggle('slow','swing')
+	})		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		//第一步，获取所有的a标签
+//		$('a').click(function(){
+//		//定义parent为当前点击元素的父级
+//		var parent = $(this).parent()
+//		//parent是否含有on类名
+//		if(parent.hasClass('on')){
+//			//如果有on这个类名就移除该类名
+//			parent.removeClass('on')
+//		}else{
+//			//若没有这个类名就添加on
+//			parent.addClass('on')
+//			//移除parent兄弟元素的on
+//			parent.siblings().removeClass('on')
+//			//通过父级找到需要滑动的盒子(当前为lists),并将其收起
+//			parent.siblings().find('.lists').slideUp()
+//		}
+//		//最后当前按钮的下一个标签用slideToggle方法
+//		$(this).next().slideToggle()
+//	})
+	</script>
+</html>

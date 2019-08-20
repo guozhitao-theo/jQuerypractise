@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>select练习</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="icon-font/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="css/public.css"/>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			padding-top: 50px;
+		}
+		.select-box{
+			width: 200px;
+			/*border: 1px solid #E2E2E2;*/
+			margin-left: 40%;
+		}
+		.select-title{
+			width: 200px;
+			border: 1px solid #E2E2E2;
+		}
+		.select-show{
+			width: 100px;
+			height: 24px ;
+			border: 0;
+			font-size: 12px;
+		}
+		.options{
+			width: 200px;
+			border: 1px solid #E2E2E2;
+			background: #fff;
+			padding-left: 20px;
+			border-top: 0;
+			display: none;
+			position: absolute;
+			z-index: 1;
+			
+		}
+		.options-lists{
+			list-style: none;
+		}
+		.options-lists:hover{
+			background: #f2f2f2;
+		}
+		.show{
+			display: block;
+		}
+		.on{
+			position: relative;
+			z-index: 1;
+			margin-bottom: 10px;
+		}	
+	</style>
+	<body>
+		<!--select练习-->
+		<div class="select-box on">
+			<div class="select-title">
+				<input class="select-show padding-20-left" type="text"  value="1" readonly />
+				<span class="iconfont icon-sanjiaoxia fr padding-10-right"></span>
+			</div>
+			
+			<ul class="options">
+				<li class="options-lists">1</li>
+				<li class="options-lists">2</li>
+				<li class="options-lists">3</li>
+				<li class="options-lists">4</li>
+			</ul>
+		</div>
+		<div class="select-box">
+			<div class="select-title">
+				<input class="select-show  padding-20-left" type="text"  value="1" readonly />
+				<span class="iconfont icon-sanjiaoxia fr padding-10-right"></span>
+			</div>
+			
+			<ul class="options">
+				<li class="options-lists">1</li>
+				<li class="options-lists">2</li>
+				<li class="options-lists">3</li>
+				<li class="options-lists">4</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script src="js/select.js"></script>
+<script>
+	$('.select-box').selectorExample({
+		title: '.select-title',
+		list: '.options-lists',
+		listBox: '.options',
+		parent: '.select-box',
+		text: '.select-show'
+	})
+	
+</script>

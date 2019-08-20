@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<label>a,<input type="checkbox" name=""/></label>
+		<label>b,<input type="checkbox" name=""/></label>
+		<label>b,<input type="checkbox" name=""/></label>
+		<label>c,<input type="checkbox" name=""/></label>
+		<label>c,<input type="checkbox" name=""/></label>
+		<label>c,<input type="checkbox" name=""/></label>
+		<label>d,<input type="checkbox" name=""/></label>
+		<label>d,<input type="checkbox" name=""/></label>
+		<div class="">
+			<button>全选</button>
+			<button>全不选</button>
+			<button>反选</button>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script>
+	//将全选全不选，反选，写入$.fn中
+	$.fn.extend({
+		//全选
+		checkall:function(){
+			$(this).prop('checked',true)
+		},
+		//全不选
+		notall:function(){
+			$(this).prop('checked',false)
+		},
+		//反选
+		reserve:function(){
+			$(this).prop('checked', !$(this).prop('checked'))
+		}
+		
+		
+	})
+	//去掉字符串前面的空格的方法的封装
+	$.extend({
+		//去掉字符串前面的空格 传一个参数为字符串
+		rmspacefront: function(str){
+			//定义一个需要的正则表达式 去掉字符串前面的空格
+			var regs = /^\s*/
+			//去掉str前的空格
+			str = str.replace(regs,'')
+			return str
+		},
+		//去掉字符串后面的空格
+		rmspaceback: function(){
+			//定义一个需要的正则表达式
+			var regs = /\s*$/
+			//去掉str后面的空格
+			str = str.replace(regs,'')
+			return str
+		},
+		//去掉首尾的空格
+		rmspaceFandB: function(){
+			//定义一个需要的正则表达式
+			var regs1 = /^\s*/
+			var regs2 = /\s*$/
+			//去掉字符串前面和后面的空格
+			str = str.replace(regs1,'').replace(regs2,'')
+			return str
+		},
+		//去掉字符串中的所有的空格
+		rmspaceall:function(){
+			//定义一个需要的正则表达式
+			var regs = /\s*/g
+			str = str.replace(regs,'')
+			return str
+		}
+		
+	})
+	//给全选button按钮添加点击事件
+	$('button').eq(0).click(function(){
+		$('[type=checkbox]').checkall()
+	})
+	//给全部选按钮添加点击事件
+	$('button').eq(1).click(function(){
+		$('[type=checkbox]').notall()
+	})
+	//给反选按钮添加点击事件
+	$('button').eq(2).click(function(){
+		$('[type=checkbox]').reserve()
+	})
+	//定义一个字符串
+	var str = '    sjhdjshd sjidjs  kjs '
+	//打印删除前面的空格之后的str
+	console.log('---------'+$.rmspacefront(str)+'---------')
+	//打印删除后面的空格后的str
+	console.log('----'+$.rmspaceback(str)+'------')
+	//打印删除前面和后面的空格
+	console.log('-------'+$.rmspaceFandB(str)+'------')
+	//打印删除所有的空格后的str
+	console.log('------'+$.rmspaceall(str)+'------')
+</script>

@@ -1,0 +1,54 @@
+<!--全选按钮实现-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="">
+			<label><input type="checkbox" name="check-list"  value="css" />free </label></br>
+			<label><input type="checkbox" name="check-list"  value="css" />表达自己的意思</label></br>
+			<label><input type="checkbox" name="check-list"  value="css" />flow，跟着节拍</label></br>
+			<label><input type="checkbox" name="check-list"  value="css" />韵脚</label></br>
+			<label><input type="checkbox" name="check-list"  value="css" />平时多使用韵脚造句</label></br>
+			<label><input type="checkbox" name="check-list"  value="css" />将其养成一种习惯</label></br>
+			<label><input type="checkbox" name="check-list"  value="css" />punchline</label></br>
+			<label><input type="checkbox" name="check-list"  value="css" />我觉得你长得黑美，有着缪斯女神的脸和凤姐的嘴</label>
+		</div></br></br>
+		<label><input type="checkbox" name="check-all" value="js" />freestyle的入门到超神</label>
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script>
+	//给全选按钮添加改变事件
+	$('[name="check-all"]').change(function(){
+		//如果当前checked=true就将其他复选框的checked设置为true,(注意，这里设置的boolean值，不能使用attr()方法)
+		if(this.checked){
+			$('[name="check-list"]').prop('checked',true) 
+		}else{
+			//当前checked为false就将其他复选框的checked值设为false
+			$('[name="check-list"]').prop('checked',false) 
+		}
+	})
+	//单选按钮添加改变方法，使其一个不选中，或者全部选中时，全选复选框对应不选中和选中
+	$('[name="check-list"]').change(function(){
+		//定义一个初始值为0的变量用于计数
+		var index = 0
+		//jQeach遍历，每个匹配元素规定运行的函数。
+		$('[name="check-list"]').each(function(){
+			//如果当前点击改变checked为true,index=index+1
+			if( this.checked){
+				index=index+1
+			}
+		})
+		//如果index大于或者等于单选框的总数就将全选框选中
+		if( index>= $('[name="check-list"]').length){
+			$('[name="check-all"]').prop('checked',true) 
+			//否则全选框为未选中
+		}else{
+			$('[name="check-all"]').prop('checked',false) 
+		}
+	})
+</script>

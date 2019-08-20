@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.box{
+			width: 500px;
+			height: 500px;
+			background: #FF2D52;
+		}
+		.child{
+			width: 200px;
+			height: 200px;
+			background: #800080;
+			position: relative;
+		}
+		.descendant{
+			width: 100px;
+			height: 100px;
+			background: blue;
+		}
+	</style>
+	<body>
+		<div class="box">
+			<div class="child">
+				<div class="descendant">
+					<!--<input type="text"  placeholder="那个啥"/>-->
+				</div>
+			</div>
+		</div>
+		<a href="https://me.csdn.net/qq_44698161">学习</a>
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script>
+//	//鼠标移入
+//	$('.box').mouseenter(function(){
+//		console.log('鼠标移入mouseenter')
+//	})
+//	
+//	$('.box').mouseover(function(){
+//		console.log('鼠标移入mouseover')
+//	})
+//	//鼠标移出
+//	$('.box').mouseleave(function(){
+//		console.log('鼠标移出mouseleave')
+//	} )
+//	$('.box').mouseout(function(){
+//		console.log('鼠标移出mouseout')
+//	})
+//	//鼠标移动
+//	$('.box').mousemove(function(){
+//		console.log('鼠标移动')
+//	})
+//	
+	/*获取点击的地方的位置*/
+//	$('.child').click(function(event){
+//		//offsetX,Y获取在父级的位置
+//		console.log(event.offsetX,event.offsetY)
+//		//pageX,Y获取在文档中的位置
+//		console.log(event.pageX,event.pageY)
+		//clientX,Y获取在可见屏幕的位置
+//		console.log(event.clientX,event.clientY)
+
+//	})
+	
+	//让盒子跟着鼠标移动
+	
+	$('.box').mousemove(function(event){
+		console.log(111)
+		$('.child').css({
+			top: event.offsetY+"px",
+			left: event.offsetX+"px"
+		})
+	})
+//	//阻止往里冒泡
+//	$('.child').mousemove(function(){
+//		event.stopPropagation()
+//	})
+//	
+	//去除默认事件
+	$('a').click(function(event){
+		event.preventDefault()
+	})
+
+
+</script>

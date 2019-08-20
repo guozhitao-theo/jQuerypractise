@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择器</title>
+	</head>
+	<body>
+		<ul >
+			<li>1</li>
+			<li>2</li>
+			<li>0</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		
+		<ul>
+			<li>5</li>
+			<li class="six">6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li></li>
+		</ul>
+		
+		
+		<ul style="display: none;">
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+		</ul>
+		
+		
+		
+	</body>
+	<script src="js/jquery-2.1.0.js"></script>
+	<script >
+		//选择第一个子元素
+		$('ul li:first-child').css({
+			background: 'red'
+		})
+		//选择最后一个子元素
+		$('ul li:last-child').css({
+			background: 'green'
+		})
+		//选择第n个子元素
+		$('ul li:nth-child(2)').css({
+			background: 'purple'
+		})
+		//打印被隐藏的元素仅为display :none
+//		console.log($(':hidden'))
+		//选择包含某内容的元素
+		$('ul :contains(1)').css({
+			color: 'yellow'
+		})
+		//查找不含内容不含标签的元素
+//		console.log($('li:empty'))
+//		$('li:empty').css({
+//			display:'inline-block'
+//			width:'1000px'
+//			height:'30px'
+//			background: 'black'
+//		})
+		//查找包含某个选择器的
+		console.log($('ul:has(.six)').text())
+		$('ul:has(.six)').css({
+			height:'540px',
+			background : 'rgba(0,0,0,50%)'
+		})
+		//查找含有子元素或者文本大的元素
+	</script>
+</html>
