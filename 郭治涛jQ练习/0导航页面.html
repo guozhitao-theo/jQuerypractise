@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+	<link rel="stylesheet" href="css/public.css" />
+	<style>
+		p{
+			margin-top: 10px;
+			font-size: 18px;
+		}
+		.child, .child2{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<body>
+		<div class="padding-20-left margin-10-top position-relative">
+			<p>首       页：  index.html -----------------------><a href="index.html">点击查看</a></p>
+			<p>jQ工具练习.html --------------><a href="jQ工具练习.html">点击查看</a></p>
+			<p>on绑定事件练习.html ---------------><a href="on绑定事件练习.html">点击查看</a></p>
+			<p>下拉框seclect.html ---------------------><a href="seclect.html">点击查看</a></p>
+			<p>操作属性.html ---------------><a href="操作属性.html">点击查看</a></p>
+			<p>插件练习全选.html ---------------><a href="插件练习全选.html">点击查看</a></p>
+			<p>地图插件更改版.html --------><a href="地图插件更改版.html">点击查看</a></p>
+			<p>动画.html---------------------><a href="动画.html">点击查看</a></p>
+			<p>盒子跟着鼠标移动.html ------------------><a href="盒子跟着鼠标移动.html">点击查看</a></p>
+			<p>其他选择器.html ---------------><a href="其他选择器.html">点击查看</a></p>
+			<p>筛选.html ------------------><a href="筛选.html">点击查看</a></p>
+			<p>手风琴.html ----------------><a href="手风琴.html">点击查看</a></p>
+			<p>提示框封装.html----------------><a href="提示框封装.html">点击查看</a></p>
+			<p>移入移出事件练习.html----------------><a href="移入移出事件练习.html">点击查看</a></p>
+			<p>圆角边框.html ----------------><a href="圆角边框.html">点击查看</a></p>
+			<img class="child" src="img/滑稽1.png" />
+			<img class="child2" src="img/哭1.png" />
+		</div>
+		
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script>
+	$(document).mousemove(function(event){
+		//获取鼠标的位置
+		var pageX = event.pageX
+		var pageY = event.pageY
+		var height = $('.child').outerHeight()
+		var width = $('.child').outerWidth()
+//		//定义位置
+		var positionX = pageX-width/8
+		var positionY = pageY-height/8
+		//给需要移动的盒子设置位置
+		$('.child').css({
+			top: positionX/2,
+			left: positionY*2 
+		})
+		$('.child2').css({
+			top: positionY/2,
+			left: positionX*2 
+		})
+	})
+	
+	
+</script>

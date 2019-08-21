@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>提示框练习</title>
+	</head>
+	<link href="css/public.css" rel="stylesheet">
+	<style>
+		body{
+			text-align: center;
+			
+		}
+		.alert{
+			display: inline-block;
+			border: 1px solid #E2E2E2;
+			padding: 5px 10px;
+			/*width: 100px;*/
+			color: #fff;
+			position: absolute;
+			top: 2%;
+		
+		}
+		.alert-info{
+			background: blue;
+		}
+		.alert-error{
+			background: red;
+		}
+		.alert-success{
+			background: black;
+		}
+	</style>
+	<body>
+		<!--<div class="alert alert-info">
+			信息提示
+		</div>
+		<div class="alert alert-error">
+			错误提示
+		</div>
+		<div class="alert alert-success">
+			成功提示
+		</div>-->
+		
+		
+		<!--登陆框-->
+		<div class="margin-40-top">
+			用户名：<input type="text" name="username" placeholder="请输入用户名" />
+		</div>
+		<div class="margin-10-top">
+			 密码 ：<input type="password" name="usepassword" placeholder="请输入密码" />
+		</div>
+		<button class="padding-10-lr margin-10-top">提交</button>
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script src="js/tipsEncapsulation.js"></script>
+<script>
+	//给button添加点击事件
+	$('button').click(function(){
+		//获取用户名的内容
+		var useName = $('[name=username]').val()
+		//获取密码的内容
+	 	var usePassword =$('[name=usepassword]').val()
+	 	//定义一个正则表达式
+	 	var reg = /^1[345789]\d{9}$/
+		if(!useName || !reg.test(useName)){
+			$.tipsShow({
+			type: 'info',
+			text: '请输入正确的用户名(电话)',
+			time: 1
+			})
+			return;
+		}else if(!usePassword){
+			$.tipsShow({
+			type: 'error',
+			text: '请输入密码',
+			time:5
+			})
+			return;
+		}else{
+			$.tipsShow({
+			type: 'success',
+			text: '登录成功',
+			time:1,
+			success: function(){
+				window.location ='动画.html'
+			}
+			})
+			return;
+		}
+		
+	})
+	
+	
+</script>
