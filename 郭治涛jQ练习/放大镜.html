@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.jqzoom{
+			width: 400px;
+			height: 400px;
+			position: relative;
+			background: green;
+			border: 1px solid #0000FF;
+		}
+		.smallimg{
+			width: 100%;
+			height: 100%;
+		}
+		/*.bigArea{
+			border: 1px solid #E2E2E2;
+			overflow: hidden;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 0px;
+			right: -440px;
+		}*/
+	</style>
+	<body>
+		<div class="jqzoom">
+			<!--需要放大的图片-->
+			<img class="smallimg" src="img/需要更多英雄1.jpg"/>
+		</div>
+		<!--<div class="jqzoom">-->
+			<!--需要放大的图片-->
+			<!--<img class="smallimg" src="img/滑稽1.png"/>
+		</div>-->
+		
+	</body>
+</html>
+<script src="js/jquery-2.1.0.js"></script>
+<script src="js/jQueryzoom.js"></script>
+<script>
+	$('.jqzoom').jqzoom({
+		//设置显示放大图片盒子的位置
+		showTop:0,
+		showLeft:600,
+		//设置显示放大图片的宽和高
+		showWidth:400,
+		showHeight:300
+	})
+
+	
+</script>
