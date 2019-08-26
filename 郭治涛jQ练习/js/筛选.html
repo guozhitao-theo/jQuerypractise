@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		li{
+			list-style: none;
+			display: inline-block;
+		}
+		textarea{
+			display: block;
+			height: 300px;
+			width: 100px;
+		}
+	</style>
+	<body>
+		筛选：<input type="text">
+		<textarea></textarea>
+		<div class="">
+			<ul>
+				<li>姓名</li>
+				<li>性别</li>
+				<li>年龄</li>
+			</ul>
+			<ul>
+				<li>张三</li>
+				<li>男</li>
+				<li>16</li>
+			</ul>
+			<ul>
+				<li>李四</li>
+				<li>男</li>
+				<li>12</li>
+			</ul>
+			<ul>
+				<li>小芳</li>
+				<li>女</li>
+				<li>20</li>
+			</ul>
+		</div>
+		
+		 
+	</body>
+</html>
+<script src="jquery-2.1.0.js"></script>
+<script>
+	$('input').keyup(function(){
+		//获取当前的input的值
+		var value = $(this).val()
+//		1.在ulz
+		var text1 =	$('ul:contains('+value+')').closest('ul').text()
+		$('textarea').html(text1)
+	})
+</script>
